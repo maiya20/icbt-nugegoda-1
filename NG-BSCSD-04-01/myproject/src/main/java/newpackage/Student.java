@@ -5,23 +5,26 @@ package newpackage;
  *
  * @author PC
  */
-public class Student {
-      
+public class Student extends Person{
+    private String id;
     
-    public String firstName ;
-   
-    public String lastName ;
+    public Student(){
+        this.id="";
+    }
+
+    public Student(String id, String firstName, String lastName) {
+        super(firstName, lastName);
+        this.id = id;
+    }
     
-    public String getFirstName(){
-        return this.firstName;
+    
+
+    public String getId() {
+       
+        return id;
     }
-    public void setFirstName(String firstName){
-         this.firstName = firstName.toUpperCase();
-    }
-      public String getLastName(){
-        return this.lastName;
-    }
-    public void setLastName(String lastName){
-         this.lastName = lastName;
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
