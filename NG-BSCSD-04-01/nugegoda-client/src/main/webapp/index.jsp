@@ -4,6 +4,8 @@
     Author     : PC
 --%>
 
+
+<%@page import="my.service.Student"%>
 <%@page import="my.service.NewWebService"%>
 <%@page import="my.service.NewWebService_Service"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,9 +21,14 @@
                 NewWebService_Service service = new NewWebService_Service();
                 NewWebService proxy = service.getNewWebServicePort();
                 
-                String output = proxy.hello("Mahela");
+              
+                Student student = proxy.getStudent("01");
                 
-                out.print(output);
+                out.print("<p> ID : "+ student.getId()+ "</p>");
+                out.print("<p> Name : "+ student.getName() + "</p>");
+                out.print("<p> NIC : "+ student.getNic()+ "</p>");
+                
+                proxy.addStudent(student);
              %>
             
         </h1>

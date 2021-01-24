@@ -4,21 +4,135 @@
 <xsd:import namespace="http://service.my/" schemaLocation="http://localhost:8080/server-app/NewWebService?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="authenticate">
+<part name="parameters" element="tns:authenticate"/>
+</message>
+<message name="authenticateResponse">
+<part name="parameters" element="tns:authenticateResponse"/>
+</message>
+<message name="addStudent">
+<part name="parameters" element="tns:addStudent"/>
+</message>
+<message name="addStudentResponse">
+<part name="parameters" element="tns:addStudentResponse"/>
+</message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
 </message>
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
+<message name="deleteStudent">
+<part name="parameters" element="tns:deleteStudent"/>
+</message>
+<message name="deleteStudentResponse">
+<part name="parameters" element="tns:deleteStudentResponse"/>
+</message>
+<message name="updateStudent">
+<part name="parameters" element="tns:updateStudent"/>
+</message>
+<message name="updateStudentResponse">
+<part name="parameters" element="tns:updateStudentResponse"/>
+</message>
+<message name="getStudent">
+<part name="parameters" element="tns:getStudent"/>
+</message>
+<message name="getStudentResponse">
+<part name="parameters" element="tns:getStudentResponse"/>
+</message>
+<message name="getStudents">
+<part name="parameters" element="tns:getStudents"/>
+</message>
+<message name="getStudentsResponse">
+<part name="parameters" element="tns:getStudentsResponse"/>
+</message>
 <portType name="NewWebService">
+<operation name="authenticate">
+<input wsam:Action="http://service.my/NewWebService/authenticateRequest" message="tns:authenticate"/>
+<output wsam:Action="http://service.my/NewWebService/authenticateResponse" message="tns:authenticateResponse"/>
+</operation>
+<operation name="addStudent">
+<input wsam:Action="http://service.my/NewWebService/addStudentRequest" message="tns:addStudent"/>
+<output wsam:Action="http://service.my/NewWebService/addStudentResponse" message="tns:addStudentResponse"/>
+</operation>
 <operation name="hello">
 <input wsam:Action="http://service.my/NewWebService/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://service.my/NewWebService/helloResponse" message="tns:helloResponse"/>
 </operation>
+<operation name="deleteStudent">
+<input wsam:Action="http://service.my/NewWebService/deleteStudentRequest" message="tns:deleteStudent"/>
+<output wsam:Action="http://service.my/NewWebService/deleteStudentResponse" message="tns:deleteStudentResponse"/>
+</operation>
+<operation name="updateStudent">
+<input wsam:Action="http://service.my/NewWebService/updateStudentRequest" message="tns:updateStudent"/>
+<output wsam:Action="http://service.my/NewWebService/updateStudentResponse" message="tns:updateStudentResponse"/>
+</operation>
+<operation name="getStudent">
+<input wsam:Action="http://service.my/NewWebService/getStudentRequest" message="tns:getStudent"/>
+<output wsam:Action="http://service.my/NewWebService/getStudentResponse" message="tns:getStudentResponse"/>
+</operation>
+<operation name="getStudents">
+<input wsam:Action="http://service.my/NewWebService/getStudentsRequest" message="tns:getStudents"/>
+<output wsam:Action="http://service.my/NewWebService/getStudentsResponse" message="tns:getStudentsResponse"/>
+</operation>
 </portType>
 <binding name="NewWebServicePortBinding" type="tns:NewWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="authenticate">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addStudent">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="hello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteStudent">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updateStudent">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getStudent">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getStudents">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
